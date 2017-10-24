@@ -1,0 +1,52 @@
+apply plugin: 'com.android.library'
+
+ext {
+    bintrayRepo = 'android'
+    bintrayName = 'ExoVideoView'
+    bintrayOrg = "touchlane"
+
+    publishedGroupId = 'com.touchlane.android'
+    artifact = 'exo-video-view'
+
+    libraryName = 'ExoVideoView'
+    libraryDescription = 'Alternative VideoView implementation that uses ExoPlayer for playback and may share the same instance of ExoPlayer between multiple views. Optimal for usage in lists or different fragments within the same activity.'
+    libraryVersion = '1.0.0'
+
+    siteUrl = 'https://github.com/touchlane/ExoVideoView'
+    gitUrl = 'https://github.com/touchlane/ExoVideoView.git'
+
+    developerId = 'touchlane'
+    developerName = 'Touchlane LLC'
+    developerEmail = 'tech@touchlane.com'
+
+    licenseName = 'MIT License'
+    licenseUrl = 'https://opensource.org/licenses/MIT'
+    allLicenses = ["MIT"]
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "26.0.2"
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt')
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.google.android.exoplayer:exoplayer-core:r2.5.3'
+}
+
+// taken from https://github.com/nuuneoi/JCenter and customized to accept 'organization' parameter
+apply from: 'bintray/installv1.gradle'
+apply from: 'bintray/bintrayv1.gradle'
