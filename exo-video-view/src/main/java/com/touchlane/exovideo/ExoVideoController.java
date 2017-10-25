@@ -8,7 +8,6 @@ import android.view.Surface;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.ExoPlayerFactory;
 import com.google.android.exoplayer2.Player;
 import com.google.android.exoplayer2.SimpleExoPlayer;
@@ -110,7 +109,7 @@ public final class ExoVideoController {
             boolean playbackStateChanged = mPlaybackState != playbackState;
             mPlaybackState = playbackState;
 
-            if (playbackStateChanged && playbackState == ExoPlayer.STATE_ENDED) {
+            if (playbackStateChanged && playbackState == Player.STATE_ENDED) {
                 if (mPlayerConnection != null) {
                     mPlayerConnection.mListener.onVideoEnded();
                 }

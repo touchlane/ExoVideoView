@@ -160,6 +160,13 @@ public class ExoVideoView extends FrameLayout {
         mThumbnail.setVisibility(show ? View.VISIBLE : View.INVISIBLE);
     }
 
+    /**
+     * Set uri of a video to play.
+     *
+     * @param uri all supported schemes are defined here
+     *            {@link com.google.android.exoplayer2.upstream.DefaultDataSource}
+     *            (currently tested only with asset and file schemes)
+     */
     public void setSource(Uri uri) {
         mVideoUri = uri;
         showThumbnail(true);
@@ -172,6 +179,11 @@ public class ExoVideoView extends FrameLayout {
         mExoVideoController = exoVideoController;
     }
 
+    /**
+     * Plays the specified video.
+     * <p>
+     * Set {@link ExoVideoController} and source before playing.
+     */
     public void play() {
         if (mPlayerConnection == null || !mPlayerConnection.getUri().equals(mVideoUri)) {
             mPlayerConnection = mExoVideoController.connectToPlayer(mVideoUri,
@@ -193,6 +205,12 @@ public class ExoVideoView extends FrameLayout {
         return mPlayerConnection != null && mPlayerConnection.isPlaying();
     }
 
+    /**
+     * Pauses the playback. It may be continued from the paused position with {@link #play()}.
+     * <p>
+     * If you don't expect the playback to be continued from the same position, you may want to call
+     * {@link #stop()}.
+     */
     public void pause() {
         if (mPlayerConnection != null) {
             mPlayerConnection.pause();
@@ -213,6 +231,9 @@ public class ExoVideoView extends FrameLayout {
         }
     }
 
+    /**
+     * Stops the playback, resets position, and disconnects from player.
+     */
     public void stop() {
         if (mPlayerConnection != null) {
             mPlayerConnection.close();
@@ -225,6 +246,10 @@ public class ExoVideoView extends FrameLayout {
         void onPlayerDisconnected();
     }
 
+    /**
+     * You may set {@link VideoEndListener} to listen for video end or when another ExoVideoView
+     * started playing its video and the current view lost its connection to player.
+     */
     public void setVideoEndListener(VideoEndListener listener) {
         mVideoEndListener = listener;
     }
