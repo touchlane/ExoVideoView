@@ -39,7 +39,7 @@ mExoVideoView.setExoVideoController(mExoVideoController);
 mExoVideoView.setThumbnailProvider(mThumbnailProvider);
 ```
 
-Set the same ```ExoVideoController``` for every new ```ExoVideoView``` and they all will share the same ExoPlayer. Then just set use ```setSource(Uri)``` on your view and call ```play()/pause()```.
+Set the same ```ExoVideoController``` for every new ```ExoVideoView``` and they all will share the same ExoPlayer. Then just set path to your video with ```setSource(Uri)``` and call ```play()/pause()```.
 
 And that's pretty much it.
 
