@@ -47,6 +47,7 @@ Feel free to use the library as is, or extend it for any missing functionality. 
 
 ## Attribution
 
+Libraries and resources used
 - [ExoPlayer](https://github.com/google/ExoPlayer) under Apache-2.0 License
 - [Picasso](https://github.com/square/picasso) under Apache-2.0 License
 - [Additional JCenter scripts](https://github.com/nuuneoi/JCenter) under Apache-2.0 License
