@@ -10,7 +10,7 @@ ext {
 
     libraryName = 'ExoVideoView'
     libraryDescription = 'Alternative VideoView implementation that uses ExoPlayer for playback and may share the same instance of ExoPlayer between multiple views. Optimal for usage in lists or different fragments within the same activity.'
-    libraryVersion = '1.0.1'
+    libraryVersion = '1.0.2'
 
     siteUrl = 'https://github.com/touchlane/ExoVideoView'
     gitUrl = 'https://github.com/touchlane/ExoVideoView.git'
