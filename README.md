@@ -16,14 +16,6 @@ First add the dependency to your project
 compile 'com.touchlane.android:exo-video-view:{latest_version}'
 ```
 
-Also, you should specify the maven repository for it to work
-
-```
-maven {
-    url "https://dl.bintray.com/touchlane/android/"
-}
-```
-
 Then create a new instance of ```ExoVideoController``` in your activity and add initialization/deinitialization calls in ```onStart()/onStop()``` (```onResume()/onPause()``` may also be suitable)
 
 ```
@@ -51,7 +43,7 @@ Set the same ```ExoVideoController``` for every new ```ExoVideoView``` and they 
 
 And that's pretty much it.
 
-Feel free to use the library as is, or extend it for any required functionality. Right now it provides only the minimum required functionality for playing videos and may not be sufficient for all use cases.
+Feel free to use the library as is, or extend it for any missing functionality. Right now it provides only the required minimum for playing videos and may not be sufficient for all use cases.
 
 ## Attribution
 
