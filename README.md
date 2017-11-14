@@ -1,3 +1,5 @@
+![LOGO](https://github.com/touchlane/Docs/blob/master/Assets/logo.svg)
+
 # ExoVideoView
 
 [![Download](https://api.bintray.com/packages/touchlane/android/ExoVideoView/images/download.svg)](https://bintray.com/touchlane/android/ExoVideoView/_latestVersion)
